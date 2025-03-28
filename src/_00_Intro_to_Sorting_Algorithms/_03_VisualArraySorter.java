@@ -38,17 +38,20 @@ import processing.core.PApplet;
  *     mousePressed variable
  */
 public class _03_VisualArraySorter extends PApplet {
-    static final int WIDTH = 600;
-    static final int HEIGHT = 400;
+    static final int WIDTH = 500;
+    static final int HEIGHT = 500;
+    int[] arr;
+    
 
     @Override
     public void settings() {
-        
+        size(WIDTH, HEIGHT);
     }
 
     @Override
     public void setup() {
-        
+        arr = new int[50];
+        random(HEIGHT);
     }
 
     @Override
