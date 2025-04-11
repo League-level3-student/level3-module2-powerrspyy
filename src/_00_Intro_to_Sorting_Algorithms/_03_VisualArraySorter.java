@@ -51,12 +51,33 @@ public class _03_VisualArraySorter extends PApplet {
     @Override
     public void setup() {
         arr = new int[50];
-        random(HEIGHT);
+        for(int i = 0; i < arr.length; i ++) {
+        	arr[i] = (int)random(HEIGHT);
+        }
+//        noStroke();
+        stroke(100);
+        
     }
 
     @Override
     public void draw() {
+        background(255, 255, 255);
+        fill(0,0,0);
+        if(mousePressed) {
+        	randomize_arr(arr);
+        }
+        for(int i = 0; i < arr.length; i ++) {
+        	rect(i * WIDTH/arr.length, HEIGHT, WIDTH/arr.length, -arr[i]);
+        	
+        }
+        stepSort(arr);
         
+    }
+    
+    public void randomize_arr(int[] arr) {
+        for(int i = 0; i < arr.length; i ++) {
+        	arr[i] = (int)random(HEIGHT);
+        }
     }
 
     static public void main(String[] passedArgs) {
